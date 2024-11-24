@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insights Dashboard</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #343a40;
+            font-size: 28px;
+        }
+
+        .header h2 {
+            margin: 5px 0 0;
+            color: #6c757d;
+            font-size: 18px;
+        }
+
+        /* Insights Section */
+        .insights {
+            padding: 20px;
+        }
+
+        .insights h3 {
+            color: #495057;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .insights ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .insights li {
+            background-color: #f8f9fa;
+            margin: 10px 0;
+            padding: 15px 20px;
+            border-left: 4px solid #007bff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .insights li:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1f3f5;
+            border-top: 2px solid #e9ecef;
+            font-size: 14px;
+            color: #868e96;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Health Insights Dashboard</h1>
+            <h2>User ID: {{ insights.user_id }}</h2>
+        </div>
+
+        <!-- Insights Section -->
+        <div class="insights">
+            <h3>Personalized Recommendations:</h3>
+            <ul>
+                {% for feedback in insights.combined_feedback %}
+                    <li>{{ feedback }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Health Insights | <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+</body>
+</html>
