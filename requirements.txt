@@ -1,0 +1,7 @@
+This file lists the dependencies required to run the Flask application.
+
+Flask==2.3.3
+
+Install these dependencies using:
+
+pip install -r requirements.txt
